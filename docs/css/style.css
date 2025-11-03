@@ -299,6 +299,137 @@ display: none;
 
 /* --- CONTEÚDO PRINCIPAL (COLUNA DIREITA) --- */
 
+.Botao-Adicionar-mobile {
+    align-items: center;
+    display: block;
+    background-color: var(--cor-destaque);
+    color: #ffffff;
+    border: 2px solid var(--cor-cabeçalho);
+    font-family: var(--fonte-titulo);
+    margin-top: 20px;
+    margin-left: 80px;
+    padding: 12px;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+}
+
+/*---------- FORMULARIO para adicionar projetos -----------*/
+
+
+.hidden {
+    display: none;
+}
+
+
+.add-project-form {
+    background-color: #161b22;
+    border: 1px solid #30363d; 
+    border-radius: 6px; 
+    padding: 24px;
+    margin-bottom: 30px;
+}
+
+
+.add-project-form .section-heading {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    color: #e6edf3; 
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #30363d; 
+    padding-bottom: 15px;
+    text-align: left; 
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+    font-family: var(--fonte-texto);
+    font-weight: 600;
+    color: #c9d1d9; 
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+
+.form-group input[type="text"],
+.form-group input[type="file"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #0d1117; 
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    color: #e6edf3; 
+    font-family: var(--fonte-texto);
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--cor-destaque); 
+    box-shadow: 0 0 0 3px rgba(211, 32, 39, 0.3); 
+}
+
+
+.form-group input[type="file"] {
+    color: #c9d1d9;
+    padding: 8px 12px;
+}
+
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+    border-top: 1px solid #30363d;
+    padding-top: 20px;
+}
+
+
+.add-project-form .btn-view-project {
+    background-color: var(--cor-botao); 
+    color: #ffffff;
+    padding: 10px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.add-project-form .btn-view-project:hover {
+    background-color: var(--cor-botao);
+}
+
+
+.btn-cancel {
+    background-color: #21262d; 
+    color: #c9d1d9;
+    padding: 10px 16px;
+    border: 1px solid var(--cor-botao);
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.btn-cancel:hover {
+    border-color: #8b949e; 
+}
+
+/*////////////FIM DO FORMULARIO //////////*/
+
+
+
 .titulo-principal {
     font-family: var(--fonte-titulo);
     margin-bottom: var(--espaco-lg);
@@ -309,18 +440,6 @@ display: none;
     margin-left: 60px;
 }
 
-.Botão-mobile {
-    align-items: center;
-    display: block;
-    background-color: var(--cor-destaque);
-    color: #ffffff;
-    font-family: var(--fonte-titulo);
-    margin:  15px ;
-    margin-left: 80px;
-    padding: 12px;
-    margin-bottom: 100px;
-    font-size: 1.4rem;
-}
 /* A sua grade de projetos (estilos que você já tem) */
 .projects-grid {
     display: grid;
@@ -814,9 +933,26 @@ br {
     align-items: start;
 }
 
-.Botão-mobile {
+.Botao-Adicionar-mobile {
     display: none;
 }
+
+.Botao-Adicionar {
+    align-items: center;
+    display: block;
+    background-color: var(--cor-destaque);
+    color: #ffffff;
+    border: 2px solid var(--cor-cabeçalho);
+    font-family: var(--fonte-titulo);
+    margin-top: 20px;
+    margin-left: 80px;
+    padding: 12px;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+}
+
+
 
 /* --- BARRA LATERAL (SIDEBAR) --- */
 
@@ -833,11 +969,24 @@ br {
 .sidebar-titulo {
     font-family: var(--fonte-titulo);
     margin: 0 0 15px 0;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     color: var(--cor-primaria);
-    border-bottom: 1px solid #eee;
+    border-bottom: 2px solid #eee;
     padding-bottom: 15px;
 }
+
+.Lista-Subtitulo {
+    font-family: var(--fonte-titulo);
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    color: var(--cor-primaria);
+    border-bottom: 1px solid #eee;
+    padding: 15px;
+    background-color: var(--cor-fundo);
+    border-radius: 8px;
+}
+
 
 .lista-repositorios {
     list-style: none;
@@ -853,7 +1002,7 @@ br {
     border-radius: 8px;
     transition: background-color 0.2s ease, color 0.2s ease;
     margin-bottom: 5px;
-    color: #333; /* Cor de texto um pouco mais suave */
+    color: #333; 
 }
 
 .lista-repositorios li:hover {
