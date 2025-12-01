@@ -1,180 +1,351 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Site Faits</title>
     <link rel="stylesheet" href="./css/style.css" />
-</head>
+  </head>
 
-<body>
-<header class="cabeçalho">
-    <div class="cabeçalho__barra-topo"></div>
+  <body>
+    <header class="cabeçalho">
+      <div class="cabeçalho__barra-topo"></div>
 
-    <div class="cabeçalho__container">
-        
+      <div class="cabeçalho__container">
         <div class="cabeçalho__bloco-esquerdo">
-            <a href="index.html" class="cabeçalho__logo cabeçalho__logo--desktop">FAITS</a>
-            
-            <div class="cabeçalho__mobile-controls">
-                <div class="container" title="Menu de Navegação">
-                    <input type="checkbox" id="menu" class="container__botao"/>
-                    <label for="menu">
-                     <img src="./assets/Menu-aberto.svg" class="cabeçalho__menu-hamburguer container__imagem">
-                    </label>
-                    <ul class="lista-menu">
-                        <li class="lista-menu__titulo">Navegação</li>
-                        <li class="lista-menu__item"><a href="index.html">Início</a></li>
-                        <li class="lista-menu__item"><a href="armario.html">Repositório</a></li>
-                    </ul>
-                </div>
+          <a href="index.html" class="cabeçalho__logo cabeçalho__logo--desktop"
+            >FAITS</a
+          >
+
+          <div class="cabeçalho__mobile-controls">
+            <div class="container" title="Menu de Navegação">
+              <input type="checkbox" id="menu" class="container__botao" />
+              <label for="menu">
+                <img
+                  src="./assets/Menu-aberto.svg"
+                  class="cabeçalho__menu-hamburguer container__imagem"
+                  alt="Menu"
+                />
+              </label>
+              <ul class="lista-menu">
+                <li class="lista-menu__titulo">Navegação</li>
+                <li class="lista-menu__item">
+                  <a href="index.html">Início</a>
+                </li>
+                <li class="lista-menu__item">
+                  <a href="armario.html">Repositório</a>
+                </li>
+              </ul>
             </div>
+          </div>
         </div>
 
         <div class="cabeçalho__bloco-centro">
-            <a href="index.html" class="cabeçalho__logo cabeçalho__logo--mobile">FAITS</a>
-            
-            <nav class="cabeçalho__nav-desktop">
-                <a href="index.html" class="item-cabeçalho">Início</a>
-                <a href="armario.html" class="item-cabeçalho">Repositório</a>
-            </nav>
+          <a href="index.html" class="cabeçalho__logo cabeçalho__logo--mobile"
+            >FAITS</a
+          >
+
+          <nav class="cabeçalho__nav-desktop">
+            <a href="index.html" class="item-cabeçalho">Início</a>
+            <a href="armario.html" class="item-cabeçalho">Repositório</a>
+          </nav>
         </div>
 
         <div class="cabeçalho__bloco-direito">
-            <form class="form-pesquisa" id="formPesquisa">
-                 <input type="checkbox" id="search-toggle" class="search-toggle">
-                     <label for="search-toggle" class="botao-lupa" aria-label="Abrir pesquisa">
-                        <img src="./assets/lupa.png" alt="Ícone de pesquisa">
-                     </label>
-                 <input type="search" class="input-pesquisa" id="input-pesquisa" name="q" placeholder="Pesquisar..." aria-label="Campo de busca" />
-            </form>
+          <form class="form-pesquisa" id="formPesquisa">
+            <input type="checkbox" id="search-toggle" class="search-toggle" />
+            <label
+              for="search-toggle"
+              class="botao-lupa"
+              aria-label="Abrir pesquisa"
+            >
+              <img src="./assets/lupa.png" alt="Ícone de pesquisa" />
+            </label>
+            <input
+              type="search"
+              class="input-pesquisa"
+              id="input-pesquisa"
+              name="q"
+              placeholder="Pesquisar..."
+              aria-label="Campo de busca"
+            />
+          </form>
 
-            <div class="container-config" title="Menu de opções">
-                <input type="checkbox" id="config" class="container__botao__config" />
-                <label for="config">
-                    <img src="./assets/user.svg" alt="Ícone de perfil" class="icone-perfil">
-                </label>
-                <ul class="lista-menu-config">
-                    <li class="lista-menu__titulo__config">Opções</li>
-                    <li class="lista-menu__item"><a href="perfil.html">Perfil</a></li>
-                    <li class="lista-menu__item"><a href="config.html">Meus Repositórios</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</header>
-
-<main class="container-principal">
-
-    <div class="repositorio-layout">
-        
-        <aside class="sidebar-repositorios">
-            <h2 class="sidebar-titulo">Repositórios</h2>
-            
-            <button class="Botao-Adicionar js-abrir-form">Adicionar Projeto +</button>
-            <p class="Lista-Subtitulo">Lista de Repositórios</p>
-            
-            <ul id="lista-repositorios" class="lista-repositorios">
-                <li class="active" data-repositorio="todos">Todos os Projetos</li>
-                <li data-repositorio="teste-1">Teste lista filtro</li>
-                <li data-repositorio="teste-2">Teste lista filtro</li>
+          <div class="container-config" title="Menu de opções">
+            <input
+              type="checkbox"
+              id="config"
+              class="container__botao__config"
+            />
+            <label for="config">
+              <img
+                src="./assets/user.svg"
+                alt="Ícone de perfil"
+                class="icone-perfil"
+              />
+            </label>
+            <ul class="lista-menu-config">
+              <li class="lista-menu__titulo__config">Opções</li>
+              <li class="lista-menu__item">
+                <a href="login-admin.html">Administração</a>
+              </li>
+              <li class="lista-menu__item"><a href="perfil.html">Perfil</a></li>
+              <li class="lista-menu__item">
+                <a href="config.html">Meus Repositórios</a>
+              </li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container-principal">
+      <div class="repositorio-layout">
+        <aside class="sidebar-repositorios">
+          <h2 class="sidebar-titulo">Repositórios</h2>
+
+          <button class="Botao-Adicionar js-abrir-form">
+            Adicionar Projeto +
+          </button>
         </aside>
-
         <section class="conteudo-principal">
-            <h1 id="titulo-principal" class="titulo-principal">Todos os Projetos</h1>
-            
-            <button class="Botao-Adicionar-mobile js-abrir-form">Adicionar Projeto +</button>
-            
-            <section id="add-project-section" class="add-project-form hidden">
-                <h2 class="section-heading">Adicionar Novo Projeto</h2>
-                
-                <form id="project-form"> 
-                    <div class="form-group">
-                        <label for="form-titulo">Título do Projeto</label>
-                        <input type="text" id="form-titulo" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="form-descricao">Descrição</label>
-                        <textarea id="form-descricao" rows="3" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="form-repositorio">Nome do Repositório</label>
-                        <input type="text" id="form-repositorio" placeholder="ex: Segurança da Informação" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="form-imagem-file">Imagem do Projeto (Obrigatório)</label>
-                        <input type="file" id="form-imagem-file" accept="image/*" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="form-documento-file">Documento do Projeto (Obrigatório)</label>
-                        <input type="file" id="form-documento-file" accept=".pdf,.doc,.docx" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="form-link">Link Externo (Opcional)</label>
-                        <input type="text" id="form-link" placeholder="ex: https://github.com/seu-projeto">
-                    </div>
-                    <div class="form-buttons">
-                        <button type="button" id="btn-cancelar" class="btn-cancel">Cancelar</button>
-                        <button type="submit" class="btn-view-project">Salvar Projeto</button>
-                    </div>
-                </form>
-            </section>
-            
-            <div class="projects-grid" id="projects-grid-container">
-                <p>Projetos serão carregados aqui...</p>
-                <div class="project-card-placeholder"></div>
-            </div>
-        </section>
-        
-    </div>
+          <h1 id="titulo-principal" class="titulo-principal">
+            Todos os Projetos
+          </h1>
 
-</main>
+          <button class="Botao-Adicionar-mobile js-abrir-form">
+            Adicionar Projeto +
+          </button>
+
+          <div class="filtro-area">
+            <select
+              id="ordenacao-select"
+              class="filtro-select"
+              aria-label="Opções de Ordenação"
+            >
+              <option value="" disabled selected>Ordenar por...</option>
+              <option value="titulo-asc">Ordem de A-Z (Título)</option>
+              <option value="titulo-desc">Ordem de Z-A (Título)</option>
+              <option value="integrantes-desc">
+                Quantidade de Integrantes (Maior)
+              </option>
+              <option value="integrantes-asc">
+                Quantidade de Integrantes (Menor)
+              </option>
+            </select>
+          </div>
+
+          <!-- FORMULÁRIO DE CADASTRO DE PROJETO -->
+          <section id="add-project-section" class="add-project-form hidden">
+            <h2 class="section-heading">Cadastrar Novo Projeto</h2>
+
+            <form id="project-form">
+              <div class="form-group">
+                <label for="form-titulo"
+                  >Título do Projeto <span>*</span></label
+                >
+                <input type="text" id="form-titulo" required />
+              </div>
+
+              <div class="form-group">
+                <label for="form-descricao"
+                  >Descrição do Projeto <span>*</span></label
+                >
+                <textarea id="form-descricao" rows="3" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="form-curso">Curso <span>*</span></label>
+                <input
+                  type="text"
+                  id="form-curso"
+                  placeholder="Ex: Informática, Administração..."
+                  required
+                />
+              </div>
+
+              <fieldset class="form-group integrantes">
+                <div class="integrante">
+                  <label>Integrante 1 (obrigatório)</label>
+                  <input
+                    type="text"
+                    id="integrante1-nome"
+                    placeholder="Nome completo"
+                    required
+                  />
+                  <input
+                    type="text"
+                    id="integrante1-ra"
+                    placeholder="RA"
+                    required
+                  />
+                </div>
+
+                <div class="integrante">
+                  <label>Integrante 2 (obrigatório)</label>
+                  <input
+                    type="text"
+                    id="integrante2-nome"
+                    placeholder="Nome completo"
+                    required
+                  />
+                  <input
+                    type="text"
+                    id="integrante2-ra"
+                    placeholder="RA"
+                    required
+                  />
+                </div>
+
+                <div class="integrante">
+                  <label>Integrante 3 (opcional)</label>
+                  <input
+                    type="text"
+                    id="integrante3-nome"
+                    placeholder="Nome completo"
+                  />
+                  <input type="text" id="integrante3-ra" placeholder="RA" />
+                </div>
+
+                <div class="integrante">
+                  <label>Integrante 4 (opcional)</label>
+                  <input
+                    type="text"
+                    id="integrante4-nome"
+                    placeholder="Nome completo"
+                  />
+                  <input type="text" id="integrante4-ra" placeholder="RA" />
+                </div>
+
+                <div class="integrante">
+                  <label>Integrante 5 (opcional)</label>
+                  <input
+                    type="text"
+                    id="integrante5-nome"
+                    placeholder="Nome completo"
+                  />
+                  <input type="text" id="integrante5-ra" placeholder="RA" />
+                </div>
+
+                <div class="integrante">
+                  <label>Integrante 6 (opcional)</label>
+                  <input
+                    type="text"
+                    id="integrante6-nome"
+                    placeholder="Nome completo"
+                  />
+                  <input type="text" id="integrante6-ra" placeholder="RA" />
+                </div>
+              </fieldset>
+
+              <div class="form-group">
+                <label for="form-documento-file"
+                  >Documento do Projeto (PDF obrigatório)</label
+                >
+                <input
+                  type="file"
+                  id="form-documento-file"
+                  accept=".pdf"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="form-link">Link Externo (opcional)</label>
+                <input
+                  type="url"
+                  id="form-link"
+                  placeholder="https://github.com/seu-projeto"
+                />
+              </div>
+
+              <div class="form-buttons">
+                <button type="button" id="btn-cancelar" class="btn-cancel">
+                  Cancelar
+                </button>
+                <button type="submit" class="btn-view-project">
+                  Salvar Projeto
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <div class="projects-grid" id="projects-grid-container">
+            <p>Projetos serão carregados aqui...</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div id="modal-projeto" class="modal hidden">
+      <div class="modal-content">
+        <span id="modal-fechar" class="modal-close">&times;</span>
+        <div id="modal-projeto-detalhes"></div>
+      </div>
+    </div>
 
     <footer class="site-footer">
-    <div class="footer-container">
+      <div class="footer-container">
         <div class="footer-section footer-navegacao">
-            <h4>Navegação</h4>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="armario.html">Armário</a></li>
-            </ul>
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="armario.html">Armário</a></li>
+          </ul>
         </div>
 
         <div class="footer-section">
-            <h4>Projeto</h4>
-            <p>Este site é o resultado prático para a disciplina "Extensão e Dinâmicas de Aprendizagem: Sociedade do Futuro".</p>
+          <h4>Projeto</h4>
+          <p>
+            Este site é o resultado prático para a disciplina "Extensão e
+            Dinâmicas de Aprendizagem: Sociedade do Futuro".
+          </p>
         </div>
 
         <div class="footer-section">
-            <h4>Instituição</h4>
-     <div class="instituicao-item">
-        <a href="https://www.usf.edu.br/" target="_blank" rel="noopener noreferrer">
-            <img src="./assets/Usf.png" alt="Logo USF" class="instituicao-logo">
-            <span>Universidade São Francisco</span>
-        </a>
-    </div>
+          <h4>Instituição</h4>
+          <div class="instituicao-item">
+            <a
+              href="https://www.usf.edu.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./assets/Usf.png"
+                alt="Logo USF"
+                class="instituicao-logo"
+              />
+              <span>Universidade São Francisco</span>
+            </a>
+          </div>
 
-    <div class="instituicao-item">
-        <a href="https://www.cps.sp.gov.br/etec/" target="_blank" rel="noopener noreferrer">
-            <img src="./assets/Etec.png" alt="Logo ETEC" class="instituicao-logo">
-            <span>Escola Técnica Estadual ETEC</span>
-        </a>
-    </div>
-                
-            </div>
-            </div>
-    </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2025 FAITS | Todos os direitos reservados | All rights reserved.</p>
+          <div class="instituicao-item">
+            <a
+              href="https://www.cps.sp.gov.br/etec/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./assets/Etec.png"
+                alt="Logo ETEC"
+                class="instituicao-logo"
+              />
+              <span>Escola Técnica Estadual ETEC</span>
+            </a>
+          </div>
         </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 FAITS | Todos os direitos reservados | All rights
+          reserved.
+        </p>
+      </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
-    <script src="./js/pesquisa.js"></script>
-    <script src="./js/armario.js"></script>
-
-    </body>
+    <script type="module" src="./js/firebase-config.js"></script>
+    <script type="module" src="./js/armario.js"></script>
+  </body>
 </html>
-

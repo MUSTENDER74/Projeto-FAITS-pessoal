@@ -1,86 +1,224 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Perfil e Login</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body class="Body_config">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Estilo opcional para o olhinho 👁️ */
+      .senha-container {
+        position: relative;
+      }
+
+      .toggle-senha {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #555;
+        font-size: 1.2rem;
+      }
+
+      .toggle-senha:hover {
+        color: #000;
+      }
+    </style>
+  </head>
+  <body class="Body_config">
     <header class="cabeçalho_perfil">
-        <a class="Botao_setinha" href="index.html" aria-label="Voltar para a página inicial" title="Voltar para o inicio"></a>
+      <a
+        class="Botao_setinha"
+        href="index.html"
+        aria-label="Voltar para a página inicial"
+        title="Voltar para o início"
+      ></a>
     </header>
 
     <main class="main-usuario">
+      <!-- ================= LOGIN ================= -->
+      <div class="profile-page__section" id="loginSection">
+        <h2 class="profile-page__title">Login</h2>
+        <form class="profile-page__form" id="loginForm">
+          <label class="profile-page__label" for="login-ra">RA:</label>
+          <div class="profile-page__field-group">
+            <i class="bx bx-id-card"></i>
+            <input
+              class="profile-page__input"
+              type="text"
+              id="login-ra"
+              name="ra"
+              placeholder="Ex: 123456"
+              required
+            />
+          </div>
+          <br />
 
-        <div class="profile-page__section" id="loginSection">
-            <h2 class="profile-page__title">Login</h2>
-            <form class="profile-page__form" id="loginForm">
-                <label class="profile-page__label" for="login-email">E-mail:</label>
-                <div class="profile-page__field-group">
-                    <i class='bx bxs-user'></i>
-                    <input class="profile-page__input" type="email" id="login-email" name="email" required>
-                </div>
-                <br>
-                <label class="profile-page__label" for="password">Senha:</label>
-                <div class="profile-page__field-group">
-                    <i class='bx bx-lock-alt'></i>
-                    <input class="profile-page__input" type="password" id="password" name="password" required>
-                </div>
-                <br>
-                <button class="profile-page__button" type="submit">Entrar</button>
-                <button type="button" class="botao-criar" data-section="profile">Criar conta</button>
-            </form>
+          <label class="profile-page__label" for="password">Senha:</label>
+          <div class="profile-page__field-group senha-container">
+            <i class="bx bx-lock-alt"></i>
+            <input
+              class="profile-page__input"
+              type="password"
+              id="password"
+              name="password"
+              required
+            />
+            <i class="bx bx-show toggle-senha" data-target="password"></i>
+          </div>
+          <br />
+
+          <label class="profile-page__label" for="login-tipo"
+            >Tipo de login:</label
+          >
+          <div class="profile-page__field-group">
+            <i class="bx bx-user-circle"></i>
+            <select
+              class="profile-page__input"
+              id="login-tipo"
+              name="login-tipo"
+              required
+            >
+              <option value="">Selecione</option>
+              <option value="alunos">Aluno</option>
+              <option value="professores">Professor</option>
+            </select>
+          </div>
+          <br />
+
+          <label class="lembrar-login">
+            <input type="checkbox" id="lembrarLogin" />
+            Lembrar login
+          </label>
+          <br />
+
+          <button class="profile-page__button" type="submit">Entrar</button>
+          <button type="button" class="botao-criar" data-section="profile">
+            Criar conta
+          </button>
+        </form>
+      </div>
+
+      <!-- ================= CRIAR CONTA ================= -->
+      <div
+        class="profile-page__section"
+        id="profileSection"
+        style="display: none"
+      >
+        <h2 class="profile-page__title">Criar conta</h2>
+        <form class="profile-page__form" id="profileForm">
+          <label class="profile-page__label" for="new-username">Usuário:</label>
+          <div class="profile-page__field-group">
+            <i class="bx bxs-user"></i>
+            <input
+              class="profile-page__input"
+              type="text"
+              id="new-username"
+              name="new-username"
+              required
+            />
+          </div>
+          <br />
+
+          <label class="profile-page__label" for="new-ra">RA:</label>
+          <div class="profile-page__field-group">
+            <i class="bx bx-id-card"></i>
+            <input
+              class="profile-page__input"
+              type="text"
+              id="new-ra"
+              name="new-ra"
+              placeholder="Ex: 123456"
+              required
+            />
+          </div>
+          <br />
+
+          <label class="profile-page__label" for="new-curso">Curso:</label>
+          <div class="profile-page__field-group">
+            <i class="bx bxs-graduation"></i>
+            <input
+              class="profile-page__input"
+              type="text"
+              id="new-curso"
+              name="new-curso"
+              placeholder="Ex: Técnico em Informática"
+              required
+            />
+          </div>
+          <br />
+
+          <label class="profile-page__label" for="new-password">Senha:</label>
+          <div class="profile-page__field-group senha-container">
+            <i class="bx bx-lock-alt"></i>
+            <input
+              class="profile-page__input"
+              type="password"
+              id="new-password"
+              name="new-password"
+              required
+            />
+            <i class="bx bx-show toggle-senha" data-target="new-password"></i>
+          </div>
+          <br />
+
+          <label class="profile-page__label" for="confirm-password"
+            >Confirmar Senha:</label
+          >
+          <div class="profile-page__field-group senha-container">
+            <i class="bx bx-lock-alt"></i>
+            <input
+              class="profile-page__input"
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              required
+            />
+            <i
+              class="bx bx-show toggle-senha"
+              data-target="confirm-password"
+            ></i>
+          </div>
+          <br />
+
+          <button class="profile-page__button" type="submit">
+            Criar conta
+          </button>
+          <button type="button" class="botao-login" data-section="login">
+            Já tenho uma conta
+          </button>
+        </form>
+      </div>
+
+      <!-- ================= PERFIL ================= -->
+      <div
+        class="profile-page__section"
+        id="editProfileSection"
+        style="display: none"
+      >
+        <h2 class="profile-page__title">Meu Perfil</h2>
+        <div class="profile-info">
+          <p><strong>Usuário:</strong> <span id="displayUsername"></span></p>
+          <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+          <p><strong>RA:</strong> <span id="displayRA"></span></p>
+          <p><strong>Curso:</strong> <span id="displayCurso"></span></p>
         </div>
-
-        <div class="profile-page__section" id="profileSection" style="display:none;">
-            <h2 class="profile-page__title">Criar conta</h2>
-            <form class="profile-page__form" id="profileForm">
-                <label class="profile-page__label" for="new-username">Usuário:</label>
-                <div class="profile-page__field-group">
-                    <i class='bx bxs-user'></i>
-                    <input class="profile-page__input" type="text" id="new-username" name="new-username" required>
-                </div>
-                <br>
-                <label class="profile-page__label" for="new-email">E-mail:</label>
-                <div class="profile-page__field-group">
-                    <i class='bx bx-envelope'></i>
-                    <input class="profile-page__input" type="email" id="new-email" name="new-email" required>
-                </div>
-                <br>
-                <label class="profile-page__label" for="new-password">Senha:</label>
-                <div class="profile-page__field-group">
-                    <i class='bx bx-lock-alt'></i>
-                    <input class="profile-page__input" type="password" id="new-password" name="new-password" required>
-                </div>
-                <br>
-                <label class="profile-page__label" for="confirm-password">Confirmar Senha:</label>
-                <div class="profile-page__field-group">
-                    <i class='bx bx-lock-alt'></i>
-                    <input class="profile-page__input" type="password" id="confirm-password" name="confirm-password" required>
-                </div>
-                <br>
-                <button class="profile-page__button" type="submit">Criar conta</button>
-                <button type="button" class="botao-login" data-section="login">Já tenho uma conta</button>
-            </form>
-        </div>
-
-        <div class="profile-page__section" id="editProfileSection" style="display:none;">
-    <h2 class="profile-page__title">Meu Perfil</h2>
-    <div class="profile-info">
-        <p><strong>Usuário:</strong> <span id="displayUsername"></span></p>
-        <p><strong>Email:</strong> <span id="displayEmail"></span></p>
-        <p><strong>RA:</strong> <span id="displayRA"></span></p>
-    </div>
-    <button class="profile-page__button" id="logoutButton">Sair</button>
-
-    <button class="profile-page__button button-danger" id="deleteAccountButton">Apagar Minha Conta</button>
-    </div>
+        <button class="profile-page__button" id="logoutButton">Sair</button>
+        <button
+          class="profile-page__button button-danger"
+          id="deleteAccountButton"
+        >
+          Apagar Minha Conta
+        </button>
+      </div>
     </main>
 
-    <script type="module" src="./js/firebase-init.js"></script>
-    
+    <!-- Scripts -->
+    <script type="module" src="./js/firebase-config.js"></script>
     <script type="module" src="./js/perfil.js"></script>
-
-</body>
+  </body>
 </html>

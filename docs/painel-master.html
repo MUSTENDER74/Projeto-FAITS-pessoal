@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Painel Master - ADM</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="Body_config">
+    <header class="cabeçalho_perfil">
+      <div
+        id="master-info"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          padding: 10px 20px;
+        "
+      >
+        <p style="font-weight: bold; color: #333; margin: 0">
+          ADM Logado: <span id="adm-ra-display">Carregando...</span>
+        </p>
+        <button
+          id="btn-sair-master"
+          class="profile-page__button button-danger"
+          style="max-width: 100px; padding: 8px 15px; margin: 0"
+        >
+          Sair
+        </button>
+      </div>
+    </header>
+
+    <main class="main-usuario">
+      <h1 style="text-align: center; margin-bottom: 30px; padding-top: 20px">
+        Painel de Controle Master
+      </h1>
+
+      <div id="section-painel-master" class="painel-controle-layout">
+        <!-- Cadastrar Professor -->
+        <section class="painel-card">
+          <h2 class="section-heading">
+            <i class="bx bxs-briefcase-alt-2"></i> Cadastrar Professor
+          </h2>
+
+          <form id="form-funcionarios" class="form-admin">
+            <div class="form-group">
+              <label>Nome Completo</label>
+              <input type="text" id="func-nome" required />
+            </div>
+
+            <div class="form-group">
+              <label>RA (Login)</label>
+              <input type="text" id="func-ra" required />
+            </div>
+
+            <div class="form-group">
+              <label>Senha Inicial</label>
+              <input type="text" id="func-senha" required />
+            </div>
+
+            <div class="form-buttons">
+              <button type="submit" class="btn-view-project">
+                Criar Acesso
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Controle de Alunos -->
+        <section class="painel-card">
+          <h2 class="section-heading">
+            <i class="bx bxs-graduation"></i> Controle de Alunos
+          </h2>
+
+          <form id="form-alunos" class="form-admin">
+            <div class="form-group">
+              <label>Nome do Aluno</label>
+              <input type="text" id="aluno-nome" required />
+            </div>
+
+            <div class="form-group">
+              <label>RA do Aluno</label>
+              <input type="text" id="aluno-ra" required />
+            </div>
+
+            <div class="form-group">
+              <label>Curso/Senha inicial</label>
+              <input type="text" id="aluno-curso" required />
+            </div>
+
+            <div class="form-buttons">
+              <button type="submit" class="btn-view-project">
+                Gerir Acesso
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="./js/painel-master.js"></script>
+  </body>
+</html>

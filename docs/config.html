@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Site Faits</title> <link rel="stylesheet" href="./css/style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meus Repositórios</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Firebase (se ainda não estiver carregado globalmente) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  </head>
 
-<body class="Body_config"> 
-  <header class="cabeçalho_config">
-    <a class="Botao_setinha" href="index.html" aria-label="Voltar para a página inicial" title="Voltar para o inicio"></a>
-  </header>
+  <body class="Body_config">
+    <header class="cabeçalho_config">
+      <a
+        class="Botao_setinha"
+        href="index.html"
+        aria-label="Voltar para a página inicial"
+        title="Voltar para o inicio"
+      ></a>
+    </header>
 
-  <main class="Configurações">
-    <h1 class="Configurações_titulo">
-      <strong>Você ainda não possui nenhum Repositório</strong>
-    </h1>
-  </main>
-  <footer class="rodape_config">
-    </footer>
-</body>
+    <main class="Configurações">
+      <h1 class="Configurações_titulo">
+        <strong>Meus Repositórios</strong>
+      </h1>
+
+      <!-- 🔥 CONTAINER ONDE OS CARDS SERÃO CRIADOS -->
+      <div id="listaRepositorios" class="repo-container"></div>
+    </main>
+
+    <footer class="rodape_config"></footer>
+
+    <!-- Seu JS que busca no Firebase -->
+    <script type="module" src="./js/meus-repositorios.js"></script>
+  </body>
 </html>

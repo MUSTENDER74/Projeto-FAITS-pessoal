@@ -1,146 +1,224 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Site Faits</title>
     <link rel="stylesheet" href="./css/style.css" />
-</head>
+  </head>
 
-<body>
-<header class="cabeçalho">
-    <div class="cabeçalho__barra-topo"></div>
+  <body>
+    <header class="cabeçalho">
+      <div class="cabeçalho__barra-topo"></div>
 
-    <div class="cabeçalho__container">
-        
+      <div class="cabeçalho__container">
+        <!-- BLOCO ESQUERDO -->
         <div class="cabeçalho__bloco-esquerdo">
-            <a href="index.html" class="cabeçalho__logo cabeçalho__logo--desktop">FAITS</a>
-            
-            <div class="cabeçalho__mobile-controls">
-                <div class="container" title="Menu de Navegação">
-                    <input type="checkbox" id="menu" class="container__botao"/>
-                    <label for="menu">
-                     <img src="./assets/Menu-aberto.svg" class="cabeçalho__menu-hamburguer container__imagem">
-                    </label>
-                    <ul class="lista-menu">
-                        <li class="lista-menu__titulo">Navegação</li>
-                        <li class="lista-menu__item"><a href="index.html">Início</a></li>
-                        <li class="lista-menu__item"><a href="armario.html">Repositório</a></li>
-                    </ul>
-                </div>
+          <a href="index.html" class="cabeçalho__logo cabeçalho__logo--desktop"
+            >FAITS</a
+          >
+
+          <!-- MENU MOBILE -->
+          <div class="cabeçalho__mobile-controls">
+            <div class="container" title="Menu de Navegação">
+              <input type="checkbox" id="menu" class="container__botao" />
+
+              <label for="menu">
+                <img
+                  src="./assets/Menu-aberto.svg"
+                  class="cabeçalho__menu-hamburguer container__imagem"
+                  alt="Menu"
+                />
+              </label>
+
+              <ul class="lista-menu">
+                <li class="lista-menu__titulo">Navegação</li>
+                <li class="lista-menu__item">
+                  <a href="index.html">Início</a>
+                </li>
+                <li class="lista-menu__item">
+                  <a href="armario.html">Repositório</a>
+                </li>
+              </ul>
             </div>
+          </div>
         </div>
 
+        <!-- BLOCO CENTRAL -->
         <div class="cabeçalho__bloco-centro">
-            <a href="index.html" class="cabeçalho__logo cabeçalho__logo--mobile">FAITS</a>
-            
-            <nav class="cabeçalho__nav-desktop">
-                <a href="index.html" class="item-cabeçalho">Início</a>
-                <a href="armario.html" class="item-cabeçalho">Repositório</a>
-            </nav>
+          <a href="index.html" class="cabeçalho__logo cabeçalho__logo--mobile"
+            >FAITS</a
+          >
+
+          <nav class="cabeçalho__nav-desktop">
+            <a href="index.html" class="item-cabeçalho">Início</a>
+            <a href="armario.html" class="item-cabeçalho">Repositório</a>
+          </nav>
         </div>
 
+        <!-- BLOCO DIREITO -->
         <div class="cabeçalho__bloco-direito">
-            <form class="form-pesquisa" id="formPesquisa">
-                 <input type="checkbox" id="search-toggle" class="search-toggle">
-                     <label for="search-toggle" class="botao-lupa" aria-label="Abrir pesquisa">
-                        <img src="./assets/lupa.png" alt="Ícone de pesquisa">
-                     </label>
-                 <input type="search" class="input-pesquisa" id="input-pesquisa" name="q" placeholder="Pesquisar..." aria-label="Campo de busca" />
-            </form>
+          <!-- PESQUISA -->
+          <form class="form-pesquisa" id="formPesquisa">
+            <input type="checkbox" id="search-toggle" class="search-toggle" />
 
-            <div class="container-config" title="Menu de opções">
-                <input type="checkbox" id="config" class="container__botao__config" />
-                <label for="config">
-                    <img src="./assets/user.svg" alt="Ícone de perfil" class="icone-perfil">
-                </label>
-                <ul class="lista-menu-config">
-                    <li class="lista-menu__titulo__config">Opções</li>
-                    <li class="lista-menu__item"><a href="perfil.html">Perfil</a></li>
-                    <li class="lista-menu__item"><a href="config.html">Meus Repositórios</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</header>
+            <label
+              for="search-toggle"
+              class="botao-lupa"
+              aria-label="Abrir pesquisa"
+            >
+              <img src="./assets/lupa.png" alt="Ícone de pesquisa" />
+            </label>
 
-    <main class="teste_conteudo">
-        <div class="conteudo_principal_wrapper">
-            <section class="teste_conteudo__conteudo">
-                <p>
-                    Este site é o resultado prático do nosso trabalho na disciplina
-                    <b class="negrito1"
-                        >"Extensão e Dinâmicas de Aprendizagem: Sociedade do Futuro"</b
-                    >
-                    . Ele foi criado para demonstrar o conhecimento que nosso grupo
-                    adquiriu através de estudos e pesquisas extracurriculares.
-                </p>
-
-                <p>
-                    O desenvolvimento foi uma oportunidade única para consolidar nossas
-                    habilidades técnicas <b class="negrito1">(hard skills)</b> e, de
-                    forma integrada, aperfeiçoar competências interpessoais
-                    <b class="negrito1">(soft skills)</b> essenciais, como a gestão de
-                    projetos, o trabalho em equipe e a resolução de problemas.
-                </p>
-
-                <p>
-                    Além de ser um componente importante da nossa avaliação, este
-                    projeto é um marco em nosso desenvolvimento profissional. Ele
-                    representa nosso empenho em transformar aprendizado em realizações
-                    concretas, visando uma carreira de impacto.
-                </p>
-            </section>
-
-            <img
-                class="logo_Site"
-                src="./assets/faits.png"
-                alt="Imagem do nome do site"
+            <input
+              type="search"
+              class="input-pesquisa"
+              id="input-pesquisa"
+              name="q"
+              placeholder="Pesquisar..."
+              aria-label="Campo de busca"
             />
+          </form>
+
+          <!-- CONFIGURAÇÕES -->
+          <div class="container-config" title="Menu de opções">
+            <input
+              type="checkbox"
+              id="config"
+              class="container__botao__config"
+            />
+
+            <label for="config">
+              <img
+                src="./assets/user.svg"
+                alt="Ícone de perfil"
+                class="icone-perfil"
+              />
+            </label>
+
+            <ul class="lista-menu-config">
+              <li class="lista-menu__titulo__config">Opções</li>
+              <li class="lista-menu__item adm-only hidden" data-tipo="adm">
+                <a href="admin-professores.html">Gerenciar Professores</a>
+              </li>
+              <li class="lista-menu__item adm-only hidden" data-tipo="adm">
+                <a href="admin-alunos.html">Gerenciar Alunos</a>
+              </li>
+              <li class="lista-menu__item">
+                <a href="login-admin.html">Administração</a>
+              </li>
+              <li class="lista-menu__item"><a href="perfil.html">Perfil</a></li>
+              <li class="lista-menu__item">
+                <a href="config.html">Meus Repositórios</a>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="teste_conteudo">
+      <div class="conteudo_principal_wrapper">
+        <section class="teste_conteudo__conteudo">
+          <p>
+            Este site é o resultado prático do nosso trabalho na disciplina
+            <b class="negrito1"
+              >"Extensão e Dinâmicas de Aprendizagem: Sociedade do Futuro"</b
+            >. Ele foi criado para demonstrar o conhecimento que nosso grupo
+            adquiriu através de estudos e pesquisas extracurriculares.
+          </p>
+
+          <p>
+            O desenvolvimento foi uma oportunidade única para consolidar nossas
+            habilidades técnicas
+            <b class="negrito1">(hard skills)</b> e, de forma integrada,
+            aperfeiçoar competências interpessoais
+            <b class="negrito1">(soft skills)</b> essenciais, como a gestão de
+            projetos, o trabalho em equipe e a resolução de problemas.
+          </p>
+
+          <p>
+            Além de ser um componente importante da nossa avaliação, este
+            projeto é um marco em nosso desenvolvimento profissional. Ele
+            representa nosso empenho em transformar aprendizado em realizações
+            concretas, visando uma carreira de impacto.
+          </p>
+        </section>
+
+        <img
+          class="logo_Site"
+          src="./assets/faits.png"
+          alt="Imagem do nome do site"
+        />
+      </div>
     </main>
 
-     <footer class="site-footer">
-    <div class="footer-container">
+    <!-- RODAPÉ -->
+    <footer class="site-footer">
+      <div class="footer-container">
         <div class="footer-section footer-navegacao">
-            <h4>Navegação</h4>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="armario.html">Armário</a></li>
-            </ul>
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="armario.html">Repositório</a></li>
+          </ul>
         </div>
 
         <div class="footer-section">
-            <h4>Projeto</h4>
-            <p>Este site é o resultado prático para a disciplina "Extensão e Dinâmicas de Aprendizagem: Sociedade do Futuro".</p>
+          <h4>Projeto</h4>
+          <p>
+            Este site é o resultado prático para a disciplina "Extensão e
+            Dinâmicas de Aprendizagem: Sociedade do Futuro".
+          </p>
         </div>
 
         <div class="footer-section">
-            <h4>Instituição</h4>
-     <div class="instituicao-item">
-        <a href="https://www.usf.edu.br/" target="_blank" rel="noopener noreferrer">
-            <img src="./assets/Usf.png" alt="Logo USF" class="instituicao-logo">
-            <span>Universidade São Francisco</span>
-        </a>
-    </div>
+          <h4>Instituição</h4>
 
-    <div class="instituicao-item">
-        <a href="https://www.cps.sp.gov.br/etec/" target="_blank" rel="noopener noreferrer">
-            <img src="./assets/Etec.png" alt="Logo ETEC" class="instituicao-logo">
-            <span>Escola Técnica Estadual ETEC</span>
-        </a>
-    </div>
-                
-            </div>
-            </div>
-    </div>
+          <div class="instituicao-item">
+            <a
+              href="https://www.usf.edu.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./assets/Usf.png"
+                alt="Logo USF"
+                class="instituicao-logo"
+              />
+              <span>Universidade São Francisco</span>
+            </a>
+          </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2025 FAITS | Todos os direitos reservados | All rights reserved.</p>
+          <div class="instituicao-item">
+            <a
+              href="https://www.cps.sp.gov.br/etec/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./assets/Etec.png"
+                alt="Logo ETEC"
+                class="instituicao-logo"
+              />
+              <span>Escola Técnica Estadual ETEC</span>
+            </a>
+          </div>
         </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 FAITS | Todos os direitos reservados | All rights
+          reserved.
+        </p>
+      </div>
     </footer>
-        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
     <script type="module" src="./js/firebase-init.js"></script>
     <script src="./js/pesquisa.js"></script>
-</body>
+  </body>
 </html>
