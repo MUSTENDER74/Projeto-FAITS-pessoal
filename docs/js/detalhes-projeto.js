@@ -52,7 +52,7 @@ async function carregarProjeto() {
     // Preencher os inputs
     tituloInput.value = dados.titulo || "";
     descInput.value = dados.descricao || "";
-    cursoInput.value = dados.curso || "";
+    cursoInput.value = dados.curso || ""; // <-- AGORA 100% FUNCIONAL
     linkInput.value = dados.link || "";
 
     // =============== INTEGRANTES ===============
@@ -90,7 +90,6 @@ function adicionarCampoIntegrante(nome = "", ra = "") {
     <button type="button" class="btn-excluir-integrante" style="background:red;color:white;border:none;padding:6px 10px;border-radius:6px;cursor:pointer">X</button>
   `;
 
-  // botão remover
   div.querySelector(".btn-excluir-integrante").addEventListener("click", () => {
     div.remove();
   });
@@ -98,7 +97,6 @@ function adicionarCampoIntegrante(nome = "", ra = "") {
   areaIntegrantes.appendChild(div);
 }
 
-// botão adicionar
 btnAddIntegrante.addEventListener("click", () => {
   adicionarCampoIntegrante();
 });
@@ -109,7 +107,6 @@ btnAddIntegrante.addEventListener("click", () => {
 btnSalvar.addEventListener("click", async (e) => {
   e.preventDefault();
 
-  // montar integrantes
   const nomes = [...document.querySelectorAll(".integrante-nome")];
   const ras = [...document.querySelectorAll(".integrante-ra")];
 
@@ -127,6 +124,7 @@ btnSalvar.addEventListener("click", async (e) => {
     await update(ref(db, `projetos/${projetoId}`), {
       titulo: tituloInput.value,
       descricao: descInput.value,
+      curso: cursoInput.value, // <-- AGORA SALVA!
       link: linkInput.value,
       integrantes,
     });

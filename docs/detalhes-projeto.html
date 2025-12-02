@@ -4,37 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detalhes do Projeto</title>
+
     <link rel="stylesheet" href="./css/style.css" />
   </head>
+
   <body>
+    <!-- =========================
+       🔙 VOLTAR
+  ========================== -->
     <header class="detalhes-header">
-      <a href="./config.html" class="detalhes-voltar">← Voltar</a>
+      <a href="config.html" class="detalhes-voltar">← Voltar</a>
     </header>
+
+    <!-- =========================
+       📝 CONTAINER PRINCIPAL
+  ========================== -->
     <main class="detalhes-container">
       <h1 class="detalhes-titulo">Detalhes do Projeto</h1>
+
       <form id="form-editar">
-        <label class="detalhes-label">Título</label
-        ><input
+        <!-- TÍTULO -->
+        <label class="detalhes-label">Título</label>
+        <input
           type="text"
           id="edit-titulo"
           class="detalhes-input"
           placeholder="Digite o título do projeto"
-        /><label class="detalhes-label">Descrição</label
-        ><textarea
+        />
+
+        <!-- DESCRIÇÃO -->
+        <label class="detalhes-label">Descrição</label>
+        <textarea
           id="edit-descricao"
           class="detalhes-input"
           rows="5"
           placeholder="Descrição do projeto"
-        ></textarea
-        ><label class="detalhes-label">Curso</label
-        ><input
+        ></textarea>
+
+        <!-- CURSO EDITÁVEL -->
+        <label class="detalhes-label">Curso</label>
+        <input
           type="text"
           id="edit-curso"
           class="detalhes-input"
-          disabled
-          style="background: #f3f3f3; cursor: not-allowed"
-        /><label class="detalhes-label">Integrantes</label>
+          placeholder="Curso do projeto"
+        />
+
+        <!-- INTEGRANTES -->
+        <label class="detalhes-label">Integrantes</label>
+
         <div id="area-integrantes"></div>
+
         <div class="integrantes-acoes">
           <button
             type="button"
@@ -49,28 +69,42 @@
               color: white;
               border: none;
               cursor: pointer;
+              display: inline-block;
             "
           >
             + Adicionar Integrante
           </button>
         </div>
-        <label class="detalhes-label">Link Externo</label
-        ><input
+
+        <!-- LINK EXTERNO (AGORA EM LINHA NOVA) -->
+        <label class="detalhes-label">Link Externo</label>
+        <input
           type="url"
           id="edit-link"
           class="detalhes-input"
           placeholder="https://..."
-        /><label class="detalhes-label">Documento / Artigo</label
-        ><input type="file" id="edit-arquivo" class="detalhes-input" />
+        />
+
+        <!-- DOCUMENTO -->
+        <label class="detalhes-label">Documento / Artigo (opcional)</label>
+        <input type="file" id="edit-arquivo" class="detalhes-input" />
+        <p class="detalhes-nota">
+          Nota: envio de arquivos exige configurar Storage — hoje só é visual.
+        </p>
+
+        <!-- BOTÕES -->
         <div class="detalhes-botoes">
           <button type="button" id="btn-excluir" class="btn-excluir">
-            Excluir</button
-          ><button type="submit" id="btn-salvar" class="btn-salvar">
+            Excluir
+          </button>
+
+          <button type="submit" id="btn-salvar" class="btn-salvar">
             Salvar Alterações
           </button>
         </div>
       </form>
     </main>
+
     <script type="module" src="./js/detalhes-projeto.js"></script>
   </body>
 </html>

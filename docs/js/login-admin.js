@@ -1,43 +1,61 @@
-// 1. Importa a autenticação já configurada
-import { auth } from './firebase-init.js'; 
-import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+// =========================
+// 🔥 IMPORTAÇÕES DO FIREBASE
+// =========================
+import { db } from "./firebase-config.js";
+import {
+  ref,
+  get,
+} from "https://www.gstatic.com/firebasejs/12.4.0/firebase-database.js";
 
-document.addEventListener('DOMContentLoaded', () => {
-    
-    const loginForm = document.getElementById('loginForm');
+// =========================
+// 📌 FORM DO LOGIN ADMIN
+// =========================
+const form = document.getElementById("loginMasterForm");
 
-    if (loginForm) {
-        loginForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-            const ra = document.getElementById('ra').value.trim();
-            const senha = document.getElementById('senha').value.trim();
+  const ra = document.getElementById("login-ra").value.trim();
+  const senha = document.getElementById("login-senha").value.trim();
 
-            // 2. O TRUQUE: Transforma o RA em um e-mail interno
-            // Ex: se o RA é "1234", vira "1234@admin.faits"
-            const emailFormatado = `${ra}@admin.faits`;
+  if (!ra || !senha) {
+    alert("Preencha todos os campos!");
+    return;
+  }
 
-            try {
-                // 3. Tenta fazer o login seguro no Firebase
-                await signInWithEmailAndPassword(auth, emailFormatado, senha);
-                
-                alert("Login Master realizado com sucesso!");
-                
-                // 4. Redireciona para o painel
-                window.location.href = "painel-master.html";
+  try {
+    // 🔎 Busca no caminho correto do Realtime Database
+    const adminRef = ref(db, `admin/${ra}`);
+    const snapshot = await get(adminRef);
 
-            } catch (error) {
-                console.error("Erro no login master:", error.code);
-                
-                // Tratamento de erros para dar feedback ao usuário
-                if (error.code === 'auth/invalid-credential' || error.code === 'auth/user-not-found') {
-                    alert('RA ou Senha incorretos.');
-                } else if (error.code === 'auth/invalid-email') {
-                    alert('Formato de RA inválido.');
-                } else {
-                    alert('Erro ao tentar logar: ' + error.message);
-                }
-            }
-        });
+    if (!snapshot.exists()) {
+      alert("RA não encontrado!");
+      return;
     }
+
+    const dados = snapshot.val();
+
+    if (dados.senha !== senha) {
+      alert("Senha incorreta!");
+      return;
+    }
+
+    // ==============================
+    // 🔥 LOGIN DO ADMINISTRADOR
+    // ==============================
+    localStorage.setItem(
+      "usuarioLogado",
+      JSON.stringify({
+        ra: ra,
+        tipo: "admin",
+        nome: dados.nome || "Administrador",
+      })
+    );
+
+    alert("Login realizado com sucesso!");
+    window.location.href = "perfil.html";
+  } catch (error) {
+    console.error("Erro ao acessar o banco:", error);
+    alert("Erro ao acessar o banco de dados. Veja o console.");
+  }
 });

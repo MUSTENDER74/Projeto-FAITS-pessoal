@@ -75,14 +75,27 @@ main {
 /* ==========================================================================
    3. CABEÇALHO (HEADER) 
    ========================================================================== */
-.cabeçalho {
+.cabeçalho,
+.cabeçalho-master {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: var(--cor-cabeçalho);
+  background-color: var(--cor-cabeçalho); /* Cor padrão */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* Regra Específica para o Master (Sobrescreve a cor) */
+.cabeçalho-master {
+  background-color: #13131a; 
+  border-bottom: 2px solid #D32027; 
+}
+
+.hidden {
+    display: none !important;
+}
+
 .cabeçalho__barra-topo {
   height: 3px;
   background-color: var(--cor-destaque);
@@ -1725,14 +1738,85 @@ Login master
 }
 
 /* --- MEDIA QUERIES (RESPONSIVIDADE) --- */
-@media (max-width: 768px) {
-  .filtro-area {
-    justify-content: center;
+/* CARD DO ALUNO */
+.card-aluno {
+  background: #fff;
+  padding: 20px; /* padding geral */
+  padding-top: 40px; /* espaço extra para o botão X */
+  padding-right: 35px; /* espaço à direita para o botão */
+  border-radius: 12px;
+  border: 2px solid #000;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  position: relative; /* Para o botão ficar posicionado em relação ao card */
+  transition: 0.2s;
+  max-width: 300px; /* Largura máxima */
+  width: 100%; /* Responsivo */
+  box-sizing: border-box;
+}
+
+.card-aluno:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+/* BOTÃO X NO CANTO SUPERIOR DIREITO */
+.btn-excluir {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px; /* Quadrado proporcional */
+  height: 20px;
+  background: #c40000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+  border-radius: 20px; /* Apenas canto superior direito arredondado */
+
+  /* CENTRALIZAÇÃO DO X */
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  font-size: 16px;
+}
+
+.btn-excluir:hover {
+  background: #900000;
+}
+
+/* TEXTO DO CARD */
+.card-aluno h2 {
+  margin-top: 10px; /* Já tem padding-top no card */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-aluno p {
+  margin: 4px 0;
+  font-size: 15px;
+  word-wrap: break-word; /* Quebra linhas longas */
+}
+
+/* RESPONSIVO */
+@media (max-width: 400px) {
+  .card-aluno {
+    padding: 15px;
+    padding-top: 35px;
+    padding-right: 30px;
   }
-  .filtro-select,
-  .filtro-input {
-    width: 100%;
-    max-width: none;
-    margin-bottom: 10px;
+
+  .btn-excluir {
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+  }
+
+  .card-aluno h2 {
+    font-size: 16px;
+  }
+
+  .card-aluno p {
+    font-size: 14px;
   }
 }

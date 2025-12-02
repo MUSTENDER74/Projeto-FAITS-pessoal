@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <header class="cabeçalho">
+    <header class="cabeçalho" id="header-normal">
       <div class="cabeçalho__barra-topo"></div>
 
       <div class="cabeçalho__container">
@@ -116,6 +116,122 @@
         </div>
       </div>
     </header>
+        <header class="cabeçalho-master" id="header-master">
+      <div class="cabeçalho__barra-topo"></div>
+
+      <div class="cabeçalho__container">
+        <!-- BLOCO ESQUERDO -->
+        <div class="cabeçalho__bloco-esquerdo">
+          <a href="index.html" class="cabeçalho__logo cabeçalho__logo--desktop"
+            >FAITS</a
+          >
+
+          <!-- MENU MOBILE -->
+          <div class="cabeçalho__mobile-controls">
+            <div class="container" title="Menu de Navegação">
+              <input type="checkbox" id="menu" class="container__botao" />
+
+              <label for="menu">
+                <img
+                  src="./assets/Menu-aberto.svg"
+                  class="cabeçalho__menu-hamburguer container__imagem"
+                  alt="Menu"
+                />
+              </label>
+
+              <ul class="lista-menu">
+                <li class="lista-menu__titulo">Navegação</li>
+                <li class="lista-menu__item">
+                  <a href="index.html">Início</a>
+                </li>
+                <li class="lista-menu__item">
+                  <a href="armario.html">Repositório</a>
+                </li>
+                <li class="lista-menu__item">
+                  <a href="admin-alunos.html">Alunos</a>
+                </li>
+                <li class="lista-menu__item">
+                  <a href="admin-professores.html">Professores</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO CENTRAL -->
+        <div class="cabeçalho__bloco-centro">
+          <a href="index.html" class="cabeçalho__logo cabeçalho__logo--mobile"
+            >FAITS</a
+          >
+
+          <nav class="cabeçalho__nav-desktop">
+            <a href="armario.html" class="item-cabeçalho">Repositório</a>
+            <a href="admin-alunos.html" class="item-cabeçalho">Alunos</a>
+            <a href="admin-professores.html" class="item-cabeçalho">Professores</a>
+          </nav>
+        </div>
+
+        <!-- BLOCO DIREITO -->
+        <div class="cabeçalho__bloco-direito">
+          <!-- PESQUISA -->
+          <form class="form-pesquisa" id="formPesquisa">
+            <input type="checkbox" id="search-toggle" class="search-toggle" />
+
+            <label
+              for="search-toggle"
+              class="botao-lupa"
+              aria-label="Abrir pesquisa"
+            >
+              <img src="./assets/lupa.png" alt="Ícone de pesquisa" />
+            </label>
+
+            <input
+              type="search"
+              class="input-pesquisa"
+              id="input-pesquisa"
+              name="q"
+              placeholder="Pesquisar..."
+              aria-label="Campo de busca"
+            />
+          </form>
+
+          <!-- CONFIGURAÇÕES -->
+          <div class="container-config" title="Menu de opções">
+            <input
+              type="checkbox"
+              id="config"
+              class="container__botao__config"
+            />
+
+            <label for="config">
+              <img
+                src="./assets/user.svg"
+                alt="Ícone de perfil"
+                class="icone-perfil"
+              />
+            </label>
+
+            <ul class="lista-menu-config">
+              <li class="lista-menu__titulo__config">Opções</li>
+              <li class="lista-menu__item adm-only hidden" data-tipo="adm">
+                <a href="admin-professores.html">Gerenciar Professores</a>
+              </li>
+              <li class="lista-menu__item adm-only hidden" data-tipo="adm">
+                <a href="admin-alunos.html">Gerenciar Alunos</a>
+              </li>
+              <li class="lista-menu__item">
+                <a href="login-admin.html">Administração</a>
+              </li>
+              <li class="lista-menu__item"><a href="perfil.html">Perfil</a></li>
+              <li class="lista-menu__item">
+                <a href="config.html">Meus Repositórios</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="teste_conteudo">
@@ -220,5 +336,6 @@
     <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
     <script type="module" src="./js/firebase-init.js"></script>
     <script src="./js/pesquisa.js"></script>
+    <script type="module" src="./js/header-master.js"></script>
   </body>
 </html>

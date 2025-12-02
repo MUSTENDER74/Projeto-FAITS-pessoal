@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Site Faits</title>
+    <title>Lista de Alunos</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
@@ -234,253 +234,31 @@
     
 
     <main class="container-principal">
-      <div class="repositorio-layout">
-        <aside class="sidebar-repositorios">
-          <h2 class="sidebar-titulo">Repositórios</h2>
+      <h1 class="titulo-principal">Lista de Alunos</h1>
 
-          <button class="Botao-Adicionar js-abrir-form">
-            Adicionar Projeto +
-          </button>
-        </aside>
-        <section class="conteudo-principal">
-          <h1 id="titulo-principal" class="titulo-principal">
-            Todos os Projetos
-          </h1>
+      <div class="filtro-area">
+        <select id="ordenar-alunos" class="filtro-select">
+          <option value="" disabled selected>Ordenar por...</option>
+          <option value="nome-asc">Nome A–Z</option>
+          <option value="nome-desc">Nome Z–A</option>
+          <option value="ra-asc">RA (Menor)</option>
+          <option value="ra-desc">RA (Maior)</option>
+        </select>
+      </div>
 
-          <button class="Botao-Adicionar-mobile js-abrir-form">
-            Adicionar Projeto +
-          </button>
-
-          <div class="filtro-area">
-            <select
-              id="ordenacao-select"
-              class="filtro-select"
-              aria-label="Opções de Ordenação"
-            >
-              <option value="" disabled selected>Ordenar por...</option>
-              <option value="titulo-asc">Ordem de A-Z (Título)</option>
-              <option value="titulo-desc">Ordem de Z-A (Título)</option>
-              <option value="integrantes-desc">
-                Quantidade de Integrantes (Maior)
-              </option>
-              <option value="integrantes-asc">
-                Quantidade de Integrantes (Menor)
-              </option>
-            </select>
-          </div>
-
-          <!-- FORMULÁRIO DE CADASTRO DE PROJETO -->
-          <section id="add-project-section" class="add-project-form hidden">
-            <h2 class="section-heading">Cadastrar Novo Projeto</h2>
-
-            <form id="project-form">
-              <div class="form-group">
-                <label for="form-titulo"
-                  >Título do Projeto <span>*</span></label
-                >
-                <input type="text" id="form-titulo" required />
-              </div>
-
-              <div class="form-group">
-                <label for="form-descricao"
-                  >Descrição do Projeto <span>*</span></label
-                >
-                <textarea id="form-descricao" rows="3" required></textarea>
-              </div>
-
-              <div class="form-group">
-                <label for="form-curso">Curso <span>*</span></label>
-                <input
-                  type="text"
-                  id="form-curso"
-                  placeholder="Ex: Informática, Administração..."
-                  required
-                />
-              </div>
-
-              <fieldset class="form-group integrantes">
-                <div class="integrante">
-                  <label>Integrante 1 (obrigatório)</label>
-                  <input
-                    type="text"
-                    id="integrante1-nome"
-                    placeholder="Nome completo"
-                    required
-                  />
-                  <input
-                    type="text"
-                    id="integrante1-ra"
-                    placeholder="RA"
-                    required
-                  />
-                </div>
-
-                <div class="integrante">
-                  <label>Integrante 2 (obrigatório)</label>
-                  <input
-                    type="text"
-                    id="integrante2-nome"
-                    placeholder="Nome completo"
-                    required
-                  />
-                  <input
-                    type="text"
-                    id="integrante2-ra"
-                    placeholder="RA"
-                    required
-                  />
-                </div>
-
-                <div class="integrante">
-                  <label>Integrante 3 (opcional)</label>
-                  <input
-                    type="text"
-                    id="integrante3-nome"
-                    placeholder="Nome completo"
-                  />
-                  <input type="text" id="integrante3-ra" placeholder="RA" />
-                </div>
-
-                <div class="integrante">
-                  <label>Integrante 4 (opcional)</label>
-                  <input
-                    type="text"
-                    id="integrante4-nome"
-                    placeholder="Nome completo"
-                  />
-                  <input type="text" id="integrante4-ra" placeholder="RA" />
-                </div>
-
-                <div class="integrante">
-                  <label>Integrante 5 (opcional)</label>
-                  <input
-                    type="text"
-                    id="integrante5-nome"
-                    placeholder="Nome completo"
-                  />
-                  <input type="text" id="integrante5-ra" placeholder="RA" />
-                </div>
-
-                <div class="integrante">
-                  <label>Integrante 6 (opcional)</label>
-                  <input
-                    type="text"
-                    id="integrante6-nome"
-                    placeholder="Nome completo"
-                  />
-                  <input type="text" id="integrante6-ra" placeholder="RA" />
-                </div>
-              </fieldset>
-
-              <div class="form-group">
-                <label for="form-documento-file"
-                  >Documento do Projeto (PDF obrigatório)</label
-                >
-                <input
-                  type="file"
-                  id="form-documento-file"
-                  accept=".pdf"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="form-link">Link Externo (opcional)</label>
-                <input
-                  type="url"
-                  id="form-link"
-                  placeholder="https://github.com/seu-projeto"
-                />
-              </div>
-
-              <div class="form-buttons">
-                <button type="button" id="btn-cancelar" class="btn-cancel">
-                  Cancelar
-                </button>
-                <button type="submit" class="btn-view-project">
-                  Salvar Projeto
-                </button>
-              </div>
-            </form>
-          </section>
-
-          <div class="projects-grid" id="projects-grid-container">
-            <p>Projetos serão carregados aqui...</p>
-          </div>
-        </section>
+      <!-- Lista de alunos -->
+      <div id="alunos-lista" class="alunos-grid">
+        <p>Carregando alunos...</p>
       </div>
     </main>
 
-    <div id="modal-projeto" class="modal hidden">
-      <div class="modal-content">
-        <span id="modal-fechar" class="modal-close">&times;</span>
-        <div id="modal-projeto-detalhes"></div>
-      </div>
-    </div>
-
     <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-section footer-navegacao">
-          <h4>Navegação</h4>
-          <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="armario.html">Armário</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Projeto</h4>
-          <p>
-            Este site é o resultado prático para a disciplina "Extensão e
-            Dinâmicas de Aprendizagem: Sociedade do Futuro".
-          </p>
-        </div>
-
-        <div class="footer-section">
-          <h4>Instituição</h4>
-          <div class="instituicao-item">
-            <a
-              href="https://www.usf.edu.br/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="./assets/Usf.png"
-                alt="Logo USF"
-                class="instituicao-logo"
-              />
-              <span>Universidade São Francisco</span>
-            </a>
-          </div>
-
-          <div class="instituicao-item">
-            <a
-              href="https://www.cps.sp.gov.br/etec/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="./assets/Etec.png"
-                alt="Logo ETEC"
-                class="instituicao-logo"
-              />
-              <span>Escola Técnica Estadual ETEC</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>
-          &copy; 2025 FAITS | Todos os direitos reservados | All rights
-          reserved.
-        </p>
-      </div>
+      <p>&copy; 2025 FAITS | Todos os direitos reservados.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+    <!-- Scripts -->
     <script type="module" src="./js/firebase-config.js"></script>
-    <script type="module" src="./js/armario.js"></script>
+    <script type="module" src="./js/admin-alunos.js"></script>
     <script type="module" src="./js/header-master.js"></script>
   </body>
 </html>
